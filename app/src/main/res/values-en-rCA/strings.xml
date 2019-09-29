@@ -3,4 +3,8 @@
     <string name="app_name">AndroidAssignments!</string>
     <string name="hello_message">Have a good one ehh!</string>
     <string name="button_text">I\'m a Canadian button</string>
+    <string name="login_text">Login eh!</string>
+    <string name="password_text">Canadian password</string>
+    <string name="loginname_text">login name please</string>
+    <string name="switch_text">What does this do? Eh!</string>
 </resources>
