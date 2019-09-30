@@ -17,6 +17,7 @@ android:orientation="vertical">
     </TextView>
 
     <EditText
+        android:id = "@+id/username_edittext"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="@string/loginname_text"
@@ -40,4 +41,12 @@ android:orientation="vertical">
         android:layout_weight="1">
 
     </EditText>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/login_text">
+
+    </Button>
 </LinearLayout>

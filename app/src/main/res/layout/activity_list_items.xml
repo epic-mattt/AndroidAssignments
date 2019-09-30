@@ -11,21 +11,29 @@
     android:layout_columnWeight="1"
     android:gravity="fill">
 
-    <RadioButton>
+    <RadioButton
+        android:layout_columnWeight="1"
+        android:gravity="fill">
 
     </RadioButton>
-    <CheckBox>
+    <CheckBox
+        android:layout_columnWeight="1"
+        android:gravity="fill">
 
     </CheckBox>
     <Switch
-        android:text="@string/switch_text">
+        android:text="@string/switch_text"
+        android:layout_columnWeight="1"
+        android:gravity="fill">
 
     </Switch>
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="72dp"
-        android:src="@drawable/ic_launcher_background">
+        android:src="@drawable/ic_launcher_background"
+        android:layout_columnWeight="1"
+        android:gravity="fill">
 
     </ImageButton>
 
