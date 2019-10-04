@@ -1,8 +1,36 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:ThemeOverlay.Material.Dark">
         <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:background">@color/background</item>
     </style>
 
 </resources>
+
+<!-- style properties
+elevation
+textColor
+textColorLink
+textColorHighlight
+textColorHint
+textUnderLineColor
+keyTextColor
+errorColor
+successColor
+shadowColor
+itemColor
+clickColor
+resOutColor
+uncertainGestureColor
+gestureColor
+textSize
+keyTextSize
+
+cacheColorHint (for ListView scrolling background)
+
+regularColor
+-->

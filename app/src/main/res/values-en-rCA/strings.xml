@@ -2,9 +2,15 @@
 <resources>
     <string name="app_name">AndroidAssignments!</string>
     <string name="hello_message">Have a good one ehh!</string>
-    <string name="button_text">I\'m a Canadian button</string>
+    <string name="button_text">LIST O\' ACTIVITES</string>
     <string name="login_text">Login eh!</string>
     <string name="password_text">Canadian password</string>
     <string name="loginname_text">login name please</string>
     <string name="switch_text">What does this do? Eh!</string>
+    <string name="dialog_message">leaving now eh!</string>
+    <string name="dialog_title">Title eh!</string>
+    <string name="ok">Alrighty!</string>
+    <string name="cancel">Have a good one!</string>
+    <string name="start_chat_button">CHAT</string>
+    <string name="chat_send_button">send</string>
 </resources>

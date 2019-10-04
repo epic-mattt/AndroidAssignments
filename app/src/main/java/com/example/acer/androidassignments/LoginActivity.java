@@ -1,6 +1,7 @@
 package com.example.acer.androidassignments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +9,6 @@ import android.widget.Button;
 import android.content.Context;
 import android.widget.EditText;
 
-import SharedPreferences;
 
 public class LoginActivity extends Activity {
 
@@ -25,16 +25,22 @@ public class LoginActivity extends Activity {
         editText = (EditText) findViewById(R.id.username_edittext);
         Button button = findViewById(R.id.login_button);
         SharedPreferences sharedPref = getSharedPreferences("email", Context.MODE_PRIVATE);
-        Button myButton = (Button)findViewById(R.id.login_button);
+        Button myButton = (Button) findViewById(R.id.login_button);
         String email = sharedPref.getString("defaultEmail", "email@default.com;");
         editText.setText(email);
 
         button.setOnClickListener((x) -> {
-            SharedPreferences pref = getSharedPreferences("email",Context.MODE_PRIVATE);
+            SharedPreferences pref = getSharedPreferences("email", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = pref.edit();
+
             editor.putString("email", editText.getText().toString());
+            editor.apply();
+
+            Intent intent = new Intent(LoginActivity.this, StartActivity.class);
+            startActivity(intent);
         });
     }
+
 
     protected void onDestroy() {
         super.onDestroy();

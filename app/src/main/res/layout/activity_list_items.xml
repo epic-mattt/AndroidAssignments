@@ -17,11 +17,13 @@
 
     </RadioButton>
     <CheckBox
+        android:id="@+id/list_checkbox"
         android:layout_columnWeight="1"
         android:gravity="fill">
 
     </CheckBox>
     <Switch
+        android:id="@+id/list_switch"
         android:text="@string/switch_text"
         android:layout_columnWeight="1"
         android:gravity="fill">
@@ -29,6 +31,7 @@
     </Switch>
 
     <ImageButton
+        android:id="@+id/pic_button"
         android:layout_width="wrap_content"
         android:layout_height="72dp"
         android:src="@drawable/ic_launcher_background"
