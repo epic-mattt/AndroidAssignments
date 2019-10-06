@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.content.Context;
 import android.widget.EditText;
 
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
 
     String preferences_file = "androidassignments_preferences_file";
     protected static final String ACTIVITY_NAME = "LoginActivity";
@@ -23,9 +24,8 @@ public class LoginActivity extends Activity {
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
         editText = (EditText) findViewById(R.id.username_edittext);
-        Button button = findViewById(R.id.login_button);
+        Button button = (Button) findViewById(R.id.login_button);
         SharedPreferences sharedPref = getSharedPreferences("email", Context.MODE_PRIVATE);
-        Button myButton = (Button) findViewById(R.id.login_button);
         String email = sharedPref.getString("defaultEmail", "email@default.com;");
         editText.setText(email);
 
@@ -33,7 +33,7 @@ public class LoginActivity extends Activity {
             SharedPreferences pref = getSharedPreferences("email", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = pref.edit();
 
-            editor.putString("email", editText.getText().toString());
+            editor.putString("defaultEmail", editText.getText().toString());
             editor.apply();
 
             Intent intent = new Intent(LoginActivity.this, StartActivity.class);

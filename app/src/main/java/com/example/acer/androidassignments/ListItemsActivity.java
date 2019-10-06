@@ -7,13 +7,14 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class ListItemsActivity extends Activity {
+public class ListItemsActivity extends AppCompatActivity {
 
     protected static final String ACTIVITY_NAME = "ListItemsActivity";
 

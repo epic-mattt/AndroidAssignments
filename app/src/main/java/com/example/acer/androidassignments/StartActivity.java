@@ -3,12 +3,13 @@ package com.example.acer.androidassignments;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class StartActivity extends Activity {
+public class StartActivity extends AppCompatActivity {
 
     protected static final String ACTIVITY_NAME = "StartActivity";
     protected Button b_listItems, b_chat;
@@ -19,8 +20,9 @@ public class StartActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         Log.i(ACTIVITY_NAME, "In onCreate()");
+
         b_listItems = findViewById(R.id.start_listItems_button);
-        b_chat = findViewById(R.id.chat_button);
+        b_chat = findViewById(R.id.start_chat_button);
 
         b_listItems.setOnClickListener((x) -> {
             Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
@@ -30,6 +32,8 @@ public class StartActivity extends Activity {
 
     public void chat_button_clickListener(View view) {
         Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+        Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+        startActivity(intent);
     }
 
     protected void onActivityResult(int requestCode, int responseCode, Intent data) {
