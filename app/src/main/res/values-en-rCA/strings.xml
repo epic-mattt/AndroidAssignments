@@ -18,5 +18,8 @@
     <string name="toolbar_action_three_text">Canadian Action two</string>
     <string name="toolbar_action_two_text">Canadian Action three</string>
     <string name="start_toolbar">Canadian test toolbar</string>
-    <string name="toolbar_about_text">Can. About</string>
+    <string name="toolbar_about_text">Canadian About</string>
+    <string name="toolbar_action_two_title">Want to go back eh?</string>
+    <string name="toolbar_action_two_positive">yes eh</string>
+    <string name="toolbar_action_two_negative">no eh</string>
 </resources>
