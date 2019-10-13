@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_one"
+        android:title="@string/toolbar_action_one_text"
+        android:icon="@drawable/icons8_sheep_24"
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_two"
+        android:title="@string/toolbar_action_two_text"
+        android:icon="@drawable/icons8_stork_24"
+        android:orderInCategory="2"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_three"
+        android:title="@string/toolbar_action_three_text"
+        android:icon="@drawable/icons8_insect_32"
+        android:orderInCategory="3"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/toolbar_about"
+        android:title="@string/toolbar_about_text"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+</menu>

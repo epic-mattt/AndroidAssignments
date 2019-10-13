@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class StartActivity extends AppCompatActivity {
 
     protected static final String ACTIVITY_NAME = "StartActivity";
-    protected Button b_listItems, b_chat;
+    protected Button b_listItems, b_chat, b_toolbar;
 
 
     @Override
@@ -33,6 +33,11 @@ public class StartActivity extends AppCompatActivity {
     public void chat_button_clickListener(View view) {
         Log.i(ACTIVITY_NAME, "User clicked Start Chat");
         Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+        startActivity(intent);
+    }
+
+    public void toolbar_button_clickListener(View view) {
+        Intent intent = new Intent(StartActivity.this, TestToolbar.class);
         startActivity(intent);
     }
 

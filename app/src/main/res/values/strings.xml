@@ -12,4 +12,10 @@
     <string name="cancel">cancel</string>
     <string name="start_chat_button">CHAT</string>
     <string name="chat_send_button">send</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+    <string name="toolbar_action_two_text">Action two</string>
+    <string name="toolbar_action_three_text">Action three</string>
+    <string name="toolbar_action_one_text">Action one</string>
+    <string name="start_toolbar">test toolbar</string>
+    <string name="toolbar_about_text">About</string>
 </resources>
