@@ -1,6 +1,9 @@
 package com.example.acer.androidassignments;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,14 +54,21 @@ public class ChatWindow extends AppCompatActivity {
     }
 
     protected static final String ACTIVITY_NAME = "CHAT_WINDOW";
-    ChatAdapter chatAdapter;
-    ListView chat_listView;
-    Button chat_send_button;
-    EditText chat_editText;
-    ArrayList<String> chat_strings;
+    private ChatAdapter chatAdapter;
+    private ListView chat_listView;
+    private Button chat_send_button;
+    private EditText chat_editText;
+    private ArrayList<String> chat_strings;
+    private SQLiteDatabase database;
 
     public void send_button_clickListener(View view) {
-        chat_strings.add(chat_editText.getText().toString());
+        String message = chat_editText.getText().toString();
+
+        ContentValues values = new ContentValues();
+        values.put(ChatDatabaseHelper.COLUMN2, message);
+        database.insert(ChatDatabaseHelper.TABLE_NAME, null, values);
+
+        chat_strings.add(message);
         chatAdapter.notifyDataSetChanged();
         chat_editText.setText("");
     }
@@ -74,10 +84,30 @@ public class ChatWindow extends AppCompatActivity {
         chat_send_button = findViewById(R.id.chat_send_button);
         chatAdapter = new ChatAdapter(this);
         chat_listView.setAdapter(chatAdapter);
+
+        ChatDatabaseHelper chatdh = new ChatDatabaseHelper(this);
+        database = chatdh.getReadableDatabase();
+        String[] columns = {"message"};
+        Cursor cursor = database.query("Messages", columns, null, null, null, null, null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast() ) {
+            String message = cursor.getString(cursor.getColumnIndex(ChatDatabaseHelper.COLUMN2));
+            Log.i(ACTIVITY_NAME, "SQL_MESSAGE" + message);
+            cursor.moveToNext();
+            chat_strings.add(message);
+        }
+        int columnCount = cursor.getColumnCount();
+        Log.i(ACTIVITY_NAME, "Cursors's column count = " + columnCount);
+        for (int i = 0; i < columnCount; i++) {
+            Log.i(ACTIVITY_NAME, "Column id = " + i + " , Column name = " + cursor.getColumnName(i));
+        }
+        cursor.close();
+
     }
 
     protected void onDestroy() {
         super.onDestroy();
+        database.close();
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 
